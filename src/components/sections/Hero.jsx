@@ -1,7 +1,7 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Spotlight } from '@/components/ui/spotlight-new';
 import { Button } from '@/components/ui/button';
-import AnimatedButton from '@/components/common/AnimatedButton';
 import { TypographyH1, TypographyH3, TypographyP } from '@/components/typography';
 
 const Hero = () => {
@@ -16,38 +16,69 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
-        <div className="space-y-8">
+        <div className="flex flex-col items-center">
           {/* Main Heading */}
-          <div className="space-y-4">
-            <TypographyH1 className="text-7xl md:text-9xl text-center text-balance text-foreground font-semibold">
-              <span className="bg-gradient-to-r from-[#f72585] via-[#7209b7] via-[#4361ee] to-[#4cc9f0] bg-clip-text text-transparent">
-                Core Flow
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <TypographyH1 className="text-6xl md:text-8xl text-center text-balance font-semibold leading-tight">
+              <span className="bg-gradient-to-r from-[#7209b7] via-[#4cc9f0] to-[#4361ee] bg-clip-text text-transparent">
+                Transform Your Business
+                <br />
+                <span className="inline-flex items-center gap-3">
+                  with AI
+                </span>
               </span>
             </TypographyH1>
-            <TypographyH3 className="text-3xl md:text-4xl text-center">
-                Transform Your Business with AI
-            </TypographyH3>
-          </div>
+          </motion.div>
 
-          {/* Subheading */}
-          <TypographyP className="mx-auto max-w-2xl text-lg md:text-xl text-muted-foreground text-center mt-6">
-            We deliver cutting-edge artificial intelligence solutions that drive growth, 
-            automate processes, and unlock new possibilities for your business.
-          </TypographyP>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button 
-              size="lg" 
-              className="h-14 w-[180px] rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30 px-8 text-base"
+          {/* Lower Content Group - Tightly Spaced */}
+          <div className="mt-16 space-y-6">
+            {/* Tagline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              View Our Work
-            </Button>
-            <AnimatedButton className="w-[180px]">
-              Get Started
-            </AnimatedButton>
+              <TypographyH3 className="text-3xl md:text-4xl text-center text-foreground">
+                Automate the boring, Focus on the core
+              </TypographyH3>
+            </motion.div>
+
+            {/* Sub-headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            >
+              <TypographyP className="mx-auto max-w-3xl text-base md:text-lg text-muted-foreground text-center leading-relaxed">
+                We design and deploy custom AI solutions that turn complex workflows into autonomous systems. 
+                Stop managing tasks and start managing growth.
+              </TypographyP>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-2"
+            >
+              <Button 
+                className="h-12 px-8 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-semibold shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.7)] transition-all duration-300"
+              >
+                Get Started
+              </Button>
+              <Button 
+                variant="outline" 
+                className="h-12 px-8 rounded-full border-2 border-border bg-transparent hover:bg-accent text-foreground text-sm font-semibold transition-all duration-300"
+              >
+                View Our Work
+              </Button>
+            </motion.div>
           </div>
-          
         </div>
       </div>
     </section>
