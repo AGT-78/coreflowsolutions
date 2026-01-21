@@ -8,11 +8,13 @@ import {
 
 const Navbar = () => {
   return (
-    <header className="w-full border-b border-border bg-background/70 backdrop-blur-md">
+    <header className="w-full border-b border-border bg-background/70 backdrop-blur-md fixed top-0 z-50">
       <div className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center px-6">
         
-        {/* Left spacer */}
-        <div />
+        {/* Left - Logo/Brand */}
+        <div>
+          <span className="text-xl font-bold text-foreground">AI Agency</span>
+        </div>
 
         {/* Center navigation */}
         <NavigationMenu className="flex justify-center">
@@ -41,7 +43,7 @@ const Navbar = () => {
         <div className="flex justify-end">
           <Button
             variant="secondary"
-            className="rounded-full bg-white text-black/90 hover:bg-white/90"
+            className="rounded-full"
           >
             Book Now
           </Button>
