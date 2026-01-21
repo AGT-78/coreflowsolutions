@@ -1,12 +1,23 @@
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { Spotlight } from '@/components/ui/spotlight-new';
 import { Button } from '@/components/ui/button';
 import { TypographyH1, TypographyH3, TypographyP } from '@/components/typography';
 
 const Hero = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+
+  // Parallax and fade effects
+  const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.85, 0.4]);
+  const scale = useTransform(scrollYProgress, [0, 0.6, 1], [1, 0.98, 0.96]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 80]);
+
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background">
+    <section ref={sectionRef} className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-background">
       {/* Spotlight Background */}
       <Spotlight 
         gradientFirst="radial-gradient(68.54% 68.72% at 55.02% 31.46%, hsla(210, 100%, 85%, .12) 0, hsla(210, 100%, 55%, .04) 50%, hsla(210, 100%, 45%, 0) 80%)"
@@ -15,7 +26,10 @@ const Hero = () => {
       />
 
       {/* Hero Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
+      <motion.div 
+        style={{ opacity, scale, y }}
+        className="relative z-10 mx-auto max-w-7xl px-6 text-center"
+      >
         <div className="flex flex-col items-center">
           {/* Main Heading */}
           <motion.div
@@ -24,7 +38,7 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <TypographyH1 className="text-6xl md:text-8xl text-center text-balance font-semibold leading-tight">
-              <span className="bg-gradient-to-r from-[#7209b7] via-[#4cc9f0] to-[#4361ee] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-b from-[#FFFFFF] via-[#E4E4E7] to-[#71717A] bg-clip-text text-transparent">
                 Transform Your Business
                 <br />
                 <span className="inline-flex items-center gap-3">
@@ -42,8 +56,10 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              <TypographyH3 className="text-3xl md:text-4xl text-center text-foreground">
-                Automate the boring, Focus on the core
+              <TypographyH3 className="text-3xl md:text-4xl text-center">
+                <span className="bg-gradient-to-r from-[#7209b7] via-[#4cc9f0] to-[#4361ee] bg-clip-text text-transparent">
+                  Automate the boring, Focus on the core
+                </span>
               </TypographyH3>
             </motion.div>
 
@@ -80,7 +96,7 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
