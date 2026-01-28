@@ -83,10 +83,10 @@ const Features = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative group"
+                className="relative group p-[2px] rounded-2xl bg-gradient-to-br from-border/30 via-border/10 to-transparent"
               >
                 {/* Feature Card */}
-                <div className="relative h-full p-6 rounded-2xl bg-card border border-border hover:border-transparent transition-all duration-300">
+                <div className="relative h-full min-h-[300px] p-8 rounded-2xl bg-card border border-border/50 hover:border-transparent transition-all duration-300">
                   {/* Glowing Effect */}
                   <GlowingEffect
                     disabled={false}

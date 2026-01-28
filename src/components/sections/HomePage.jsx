@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../layout/Navbar';
 import Footer from '../layout/Footer';
 import Hero from './Hero';
+import Industries from './Industries';
 import Features from './Features';
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
         <Navbar />
         <Hero />
         <Features />
+        <Industries />
         <Footer />
       </div>
     )
