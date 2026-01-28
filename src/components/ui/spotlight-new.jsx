@@ -35,7 +35,7 @@ export const Spotlight = ({
           repeatType: "reverse",
           ease: "easeInOut",
         }}
-        className="absolute top-0 left-0 w-screen h-screen z-40 pointer-events-none">
+        className="absolute top-0 left-0 w-screen h-screen z-[1] pointer-events-none">
         <div
           style={{
             transform: `translateY(${translateY}px) rotate(-45deg)`,
@@ -73,7 +73,7 @@ export const Spotlight = ({
           repeatType: "reverse",
           ease: "easeInOut",
         }}
-        className="absolute top-0 right-0 w-screen h-screen z-40 pointer-events-none">
+        className="absolute top-0 right-0 w-screen h-screen z-[1] pointer-events-none">
         <div
           style={{
             transform: `translateY(${translateY}px) rotate(45deg)`,
