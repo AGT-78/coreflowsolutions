@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { Spotlight } from '@/components/ui/spotlight-new';
 import { Button } from '@/components/ui/button';
 import { TypographyH1, TypographyH3, TypographyP } from '@/components/typography';
+import LightBeam from '../common/LightBeam';
 
 const Hero = () => {
   const sectionRef = useRef(null);
@@ -37,30 +38,25 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <TypographyH1 className="text-6xl md:text-8xl text-center text-balance font-semibold leading-tight">
+            <TypographyH1 className="text-4xl md:text-6xl text-center text-balance font-medium leading-tight">
               <span className="bg-gradient-to-b from-[#FFFFFF] via-[#E4E4E7] to-[#71717A] bg-clip-text text-transparent">
-                Transform Your Business
+              Building the future with 
                 <br />
                 <span className="inline-flex items-center gap-3">
-                  with AI
+                human-centered AI
                 </span>
               </span>
             </TypographyH1>
           </motion.div>
 
           {/* Lower Content Group - Tightly Spaced */}
-          <div className="mt-16 space-y-6">
+          <div className="mt-3 space-y-6">
             {/* Tagline */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              <TypographyH3 className="text-3xl md:text-4xl text-center">
-                <span className="bg-gradient-to-r from-[#7209b7] via-[#4cc9f0] to-[#4361ee] bg-clip-text text-transparent">
-                  Automate the boring, Focus on the core
-                </span>
-              </TypographyH3>
             </motion.div>
 
             {/* Sub-headline */}
@@ -69,9 +65,8 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             >
-              <TypographyP className="mx-auto max-w-3xl text-base md:text-lg text-muted-foreground text-center leading-relaxed">
-                We design and deploy custom AI solutions that turn complex workflows into autonomous systems. 
-                Stop managing tasks and start managing growth.
+              <TypographyP className="mx-auto max-w-2xl text-base md:text-lg text-muted-foreground text-center leading-relaxed">
+                We build intuitive AI tools that help people work smarter, move faster, and stay focused on what matters.
               </TypographyP>
             </motion.div>
 

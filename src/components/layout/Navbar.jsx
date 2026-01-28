@@ -8,45 +8,38 @@ import {
 
 const Navbar = () => {
   return (
-    <header className="w-full border-b border-border bg-background/70 backdrop-blur-md fixed top-0 z-50">
-      <div className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center px-6">
+    <header className="fixed top-0 z-50 w-full bg-transparent backdrop-blur-sm">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         
-        {/* Left - Logo/Brand */}
-        <div>
-          <span className="text-xl font-bold text-foreground">AI Agency</span>
+        {/* Left - Logo */}
+        <div className="flex items-center">
+          <span className="text-xl font-bold tracking-tighter text-white">
+            MONO AI
+          </span>
         </div>
 
-        {/* Center navigation */}
-        <NavigationMenu className="flex justify-center">
-          <NavigationMenuList className="flex gap-8">
-            <NavigationMenuItem>
-              <NavigationMenuLink className="text-sm font-medium text-foreground/80 hover:text-foreground transition">
-                Home
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink className="text-sm font-medium text-foreground/80 hover:text-foreground transition">
-                Services
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink className="text-sm font-medium text-foreground/80 hover:text-foreground transition">
-                About
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+        {/* Center navigation - Increased font size */}
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList className="flex gap-10">
+            {["Home", "Services", "About"].map((item) => (
+              <NavigationMenuItem key={item}>
+                <NavigationMenuLink 
+                  className="text-[16px] font-medium text-zinc-400 transition-colors hover:text-white cursor-pointer"
+                >
+                  {item}
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Right CTA */}
-        <div className="flex justify-end">
-          <Button
-            variant="secondary"
-            className="rounded-full"
-          >
-            Book Now
-          </Button>
+        {/* Right CTA - Consistent font size increase */}
+        <div className="flex items-center gap-4">
+        <Button
+         className="rounded-full border border-white/20 bg-white/10 px-6 py-5 text-[16px] font-medium text-white backdrop-blur-md transition-all hover:bg-white/20 hover:border-white/40"
+        >
+        Get started
+        </Button>
         </div>
       </div>
     </header>
