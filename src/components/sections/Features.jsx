@@ -49,10 +49,10 @@ const Features = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative pt-12 pb-24 bg-background">
+    <section ref={sectionRef} className="relative pt-8 sm:pt-12 pb-16 sm:pb-20 md:pb-24 bg-background">
       <motion.div 
         style={{ opacity, scale, y }}
-        className="relative z-10 mx-auto max-w-7xl px-6"
+        className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6"
       >
         {/* Section Header */}
         <motion.div
@@ -60,20 +60,20 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-28"
+          className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-28"
         >
-          <TypographyH2 className="text-4xl md:text-5xl font-bold mb-8 border-b-0 pb-0">
+          <TypographyH2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 border-b-0 pb-0 px-2">
             <span className="bg-gradient-to-b from-[#FFFFFF] via-[#E4E4E7] to-[#71717A] bg-clip-text text-transparent">
               Why Choose Our AI Solutions
             </span>
           </TypographyH2>
-          <TypographyP className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <TypographyP className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Powerful features designed to transform the way you work
           </TypographyP>
         </motion.div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -86,7 +86,7 @@ const Features = () => {
                 className="relative group p-[2px] rounded-2xl bg-gradient-to-br from-border/30 via-border/10 to-transparent"
               >
                 {/* Feature Card */}
-                <div className="relative h-full min-h-[300px] p-8 rounded-2xl bg-card border border-border/50 hover:border-transparent transition-all duration-300">
+                <div className="relative h-full min-h-[250px] sm:min-h-[280px] md:min-h-[300px] p-6 sm:p-7 md:p-8 rounded-xl sm:rounded-2xl bg-card border border-border/50 hover:border-transparent transition-all duration-300">
                   {/* Glowing Effect */}
                   <GlowingEffect
                     disabled={false}
@@ -99,15 +99,15 @@ const Features = () => {
                   />
                   
                   {/* Icon */}
-                  <div className="mb-4 inline-flex p-3 rounded-xl bg-gradient-to-br from-[#7209b7]/10 via-[#4361ee]/10 to-[#4cc9f0]/10 border border-[#4361ee]/20">
-                    <Icon className="w-6 h-6 text-[#4cc9f0]" />
+                  <div className="mb-3 sm:mb-4 inline-flex p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#7209b7]/10 via-[#4361ee]/10 to-[#4cc9f0]/10 border border-[#4361ee]/20">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#4cc9f0]" />
                   </div>
 
                   {/* Content */}
-                  <TypographyH3 className="text-xl font-semibold mb-3 text-foreground">
+                  <TypographyH3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-foreground">
                     {feature.title}
                   </TypographyH3>
-                  <TypographyP className="text-sm text-muted-foreground leading-relaxed">
+                  <TypographyP className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {feature.description}
                   </TypographyP>
                 </div>

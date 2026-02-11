@@ -43,10 +43,10 @@ const Industries = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative pt-12 pb-24 bg-background">
+    <section ref={sectionRef} className="relative pt-8 sm:pt-12 pb-16 sm:pb-20 md:pb-24 bg-background">
       <motion.div 
         style={{ opacity, scale, y }}
-        className="relative z-10 mx-auto max-w-7xl px-6"
+        className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6"
       >
         {/* Section Header */}
         <motion.div
@@ -54,20 +54,20 @@ const Industries = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
         >
-          <TypographyH2 className="text-4xl md:text-5xl font-bold mb-6 border-b-0 pb-0">
+          <TypographyH2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 border-b-0 pb-0 px-2">
             <span className="bg-gradient-to-b from-[#FFFFFF] via-[#E4E4E7] to-[#71717A] bg-clip-text text-transparent">
               Industries We Serve
             </span>
           </TypographyH2>
-          <TypographyP className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <TypographyP className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Tailored AI solutions for businesses across industries
           </TypographyP>
         </motion.div>
 
         {/* Industries Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 md:gap-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12 lg:gap-16">
           {industries.map((industry, index) => {
             const Icon = industry.icon;
             return (
@@ -77,15 +77,15 @@ const Industries = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex flex-col items-center text-center gap-4"
+                className="flex flex-col items-center text-center gap-3 sm:gap-4"
               >
                 {/* Icon */}
                 <div className="relative">
-                  <Icon className={`w-16 h-16 md:w-20 md:h-20 ${industry.color} transition-transform duration-300 hover:scale-110`} strokeWidth={1.5} />
+                  <Icon className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 ${industry.color} transition-transform duration-300 hover:scale-110`} strokeWidth={1.5} />
                 </div>
 
                 {/* Label */}
-                <p className="text-sm md:text-base font-medium text-foreground/80">
+                <p className="text-xs sm:text-sm md:text-base font-medium text-foreground/80">
                   {industry.name}
                 </p>
               </motion.div>
